@@ -413,28 +413,23 @@ class PokerOddsCalculatorGUI:
         self.root = root
         self.root.title("Poker Odds Calculator")
         
-        # Configure the theme for better aesthetics
         self.style = ttk.Style()
         self.style.theme_use('clam')
         
-        # Primary colors
-        bg_color = "#2c3e50"       # Dark blue
-        secondary_bg = "#34495e"  # Slightly lighter
-        accent_color = "#3498db"   # Soft blue
-        text_color = "#ecf0f1"     # Light text
-        highlight_color = "#f39c12"  # Soft orange
+        bg_color = "#2c3e50"       
+        secondary_bg = "#34495e"  
+        accent_color = "#3498db"   
+        text_color = "#ecf0f1"    
+        highlight_color = "#f39c12"  
         
-        # Configure styles
         self.style.configure("TFrame", background=bg_color)
         self.style.configure("TLabel", background=bg_color, foreground=text_color)
         self.style.configure("TLabelframe", background=bg_color, foreground=text_color)
         self.style.configure("TLabelframe.Label", background=bg_color, foreground=highlight_color, font=('Arial', 10, 'bold'))
         
-        # Button styles
         self.style.configure("TButton", background=secondary_bg, foreground=text_color, borderwidth=1)
         self.style.map("TButton", background=[('active', accent_color), ('pressed', secondary_bg)])
         
-        # Combobox styles
         self.style.configure("TCombobox",
                              selectbackground=accent_color,
                              fieldbackground=secondary_bg,
@@ -447,14 +442,12 @@ class PokerOddsCalculatorGUI:
                        selectbackground=[('readonly', accent_color)],
                        selectforeground=[('readonly', 'white')])
         
-        # Special styles for buttons
         self.style.configure("Calculate.TButton", font=('Arial', 10, 'bold'))
         self.style.configure("Cancel.TButton", foreground="#e74c3c")
         
-        # Progress bar style
+        # Progress bar costumization
         self.style.configure("TProgressbar", background=accent_color, troughcolor=secondary_bg)
         
-        # Card and result styles
         self.style.configure("Card.TCombobox", padding=3, relief="flat", borderwidth=1)
         self.style.configure("Hint.TCombobox", fieldbackground="#4a6990", foreground="white")
         self.style.configure("Error.TCombobox", fieldbackground="#e74c3c", foreground="white")
